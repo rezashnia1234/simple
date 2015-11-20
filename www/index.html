@@ -22,9 +22,13 @@
 		}
 
 		function onDeviceReady() {
-				navigator.share("getWhiteList","",function(result)
+				navigator.share("setWhiteList","09365764862",function(result)
 				{
 					document.write(result);
+					navigator.share("getWhiteList","",function(result)
+					{
+						document.write(result);
+					});
 				});
 
 				
