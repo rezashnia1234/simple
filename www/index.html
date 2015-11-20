@@ -22,10 +22,10 @@
 		}
 
 		function onDeviceReady() {
-				navigator.share("setWhiteList","09399697542","",function(result)
+				navigator.share("setWhiteList","09399697542",function(result)
 				{
 					document.write(result);
-					navigator.share("getWhiteList","","",function(result)
+					navigator.share("getWhiteList","",function(result)
 					{
 						document.write(result);
 					});
