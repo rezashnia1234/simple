@@ -23,7 +23,10 @@
 
 		function onDeviceReady() {
 
-			navigator.share("text","title","mimetype");
+			navigator.share("argument 1","argument 2 ","mimetype",function(result)
+				{
+					document.write(result);
+				});
 
 		
 		
