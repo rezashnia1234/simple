@@ -70,13 +70,5 @@ footer, header, hgroup, menu, nav, section {
 *::-moz-focus-inner ,
 *::-o-focus-inner{ border: none;}
 
-*{
-    -webkit-touch-callout: none !important;
-    -khtml-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    -o-user-select: none !important;
-    user-select: none !important;
-	outline-style:none !important;
-}
+
  /*-------------- END reset ------------------ */
