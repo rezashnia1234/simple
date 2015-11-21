@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-    <title>بسم الله الرحمن الرحیم</title>
+	<title>بسم الله الرحمن الرحیم</title>
 	
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/font.css" />
-    
+
 	<script src="js/jquery-1.11.0.min.js"></script>
-    <script src="phonegap.js"></script>
+	<script src="phonegap.js"></script>
 	
 	<script>
 		function init() {		
 			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    start init()');
 			document.addEventListener("deviceready", onDeviceReady, false);
-			
+
 			//onDeviceReady();
 		}
 
 		function onDeviceReady() {
-				navigator.share("AppStart","",function(result)
+			$("#exec").click(function()
+			{
+				var fun = $('#function').find(":selected").text();
+				var input = ("#input").val();
+				navigator.share(fun,input,function(result)
 				{
-					document.write(result);
-				});
+					$("#output").text(result);
+				});	
 
-				
-			
-
-		
-		
-		
-			
+			});
 		}
 
 	</script>	
 
-		
-		
-		
-		
+
+
+
+
 </head>
 <body onload="init();">
 	<div class="container " id="container" >
-the new test
-	
-	
-	
+		<select id="function">
+			<option value="AppStart">AppStart</option>
+			<option value="clearLocationStorage">clearLocationStorage</option>
+			<option value="sendRequestMessage">sendRequestMessage</option>
+			<option value="setWhiteList">setWhiteList</option>
+			<option value="getWhiteList">getWhiteList</option>
+			<option value="isInWhiteList">isInWhiteList</option>
+			<option value="isInRequesteeList">isInRequesteeList</option>
+
+		</select>
+		<textarea id="input"> </textarea>
+		<input type="button" id="exec" name="exec" value="exec" />
+		<div id="output"></div>
+
+
+
+
 	</div>
 </body>
 </html>
